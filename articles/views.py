@@ -7,3 +7,8 @@ from .serializers import ArticleSerializer
 class ArticlesListAPIView(generics.ListAPIView):
     queryset = Article.objects.all()
     serializer_class = ArticleSerializer
+
+class ArticleDetailAPIView(generics.RetrieveAPIView):
+    queryset = Article.objects.all()
+    serializer_class = ArticleSerializer
+    lookup_field = 'pk'
